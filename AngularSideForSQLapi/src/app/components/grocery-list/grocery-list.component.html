@@ -18,7 +18,7 @@
   </button>
 
   <mat-list>
-    <mat-list-item *ngFor="let grocery of groceries">
+    <mat-list-item *ngFor="let grocery of groceries$ | async">
       <span style="font-weight: bold;">{{grocery.id}}. {{grocery.item}}</span>
       <span style="position: absolute;right:0;">
         <button mat-icon-button>

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Grocery } from 'src/app/models/Grocery';
+import { GroceryListCrudService } from 'src/app/services/grocery-list-crud.service';
 
 @Component({
   selector: 'app-grocery-list',
@@ -7,14 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroceryListComponent implements OnInit {
 
-  groceries = [
-    { id:1,item:'bread'},
-    { id:2,item:'corn'}
-  ]
+  groceries$: Observable<Grocery[]> | undefined
 
-  constructor() { }
+  constructor(private groceryListCrudService: GroceryListCrudService) {}
 
   ngOnInit(): void {
+    this.groceries$ = this.groceryListCrudService.fetchAll();
   }
 
 }

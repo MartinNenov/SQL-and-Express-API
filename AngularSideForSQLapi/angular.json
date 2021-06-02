@@ -34,6 +34,23 @@
             "scripts": []
           },
           "configurations": {
+            "dev": {
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
             "production": {
               "fileReplacements": [
                 {
@@ -126,5 +143,8 @@
       }
     }
   },
-  "defaultProject": "crud-operations"
+  "defaultProject": "crud-operations",
+  "cli": {
+    "analytics": "339d47f4-86f4-4128-9f99-179ac6ff45ab"
+  }
 }

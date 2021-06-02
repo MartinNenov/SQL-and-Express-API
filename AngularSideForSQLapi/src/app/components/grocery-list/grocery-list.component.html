@@ -1,37 +1,35 @@
 <mat-toolbar color="primary">CRUD operations
 </mat-toolbar>
-<h1 
-  style="
+<h1 style="
     text-align: center;
     font-size: 48px;
-    font-weight: bold;
+    font-weight:lighter;
     margin-top:100px;
-  "
-> Shopping list </h1>
+  "> Shopping list </h1>
 <mat-card style="width: 50%;margin: auto;">
-  <mat-form-field color="accent" style="width: 70%;">
-    <mat-label>Grocery item</mat-label>
-    <input matInput placeholder="Ex. Rice"/>
-  </mat-form-field>
-  <button mat-fab color="primary" style="float:right;">
+    <mat-form-field color="accent" style="width: 70%;">
+        <input #groceryInput matInput placeholder="Ex. Rice" />
+        <mat-label>Grocery item</mat-label>
+    </mat-form-field>
+    <button (click)="post(groceryInput.value)" mat-fab color="primary" style="float:right;">
     <mat-icon>add</mat-icon>
   </button>
 
-  <mat-list>
-    <mat-list-item *ngFor="let grocery of groceries$ | async">
-      <span style="font-weight: bold;">{{grocery.id}}. {{grocery.item}}</span>
-      <span style="position: absolute;right:0;">
+    <mat-list>
+        <mat-list-item *ngFor="let grocery of groceries$ | async">
+            <span style="font-weight: bold;">{{grocery.id}}. {{grocery.item}}</span>
+            <span style="position: absolute;right:0;">
         <button mat-icon-button>
-          <mat-icon >
+          <mat-icon (click)="update(grocery.id,groceryInput.value)" >
             edit
           </mat-icon>
         </button>
         <button mat-icon-button>
-          <mat-icon color="warn">
+          <mat-icon (click)="delete(grocery.id)" color="warn">
             delete
           </mat-icon>
         </button>
       </span>
-    </mat-list-item>
-  </mat-list>
+        </mat-list-item>
+    </mat-list>
 </mat-card>

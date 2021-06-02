@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { BrowserAnimationsModule ,NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatButtonModule } from '@angular/material/button'; 
 import { MatCardModule } from '@angular/material/card'; 
@@ -25,6 +25,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule,
     NoopAnimationsModule,
+    BrowserAnimationsModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,

@@ -1,0 +1,9 @@
+cheate an Update site button that appears when there is an update in the datebase information
+
+on the Angular app : 
+	send a request to the server every X seconds	.The response is ether and true or false: true if there is new information false if there is not any information .
+
+on the Express app :
+	there should be an array that keeps the connected user and a boolean thet represents if there is new information for the current user.
+	
+
